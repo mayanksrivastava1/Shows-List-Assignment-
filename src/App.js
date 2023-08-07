@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import ShowList from './Components/ShowsList';
+import ShowSummary from './Components/ShowSummary';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes> {/* Use Routes instead of Switch */}
+        <Route path="/" element={<ShowList />} /> {/* Use "element" instead of "component" */}
+        <Route path="/show/:id" element={<ShowSummary />} /> {/* Use "element" instead of "component" */}
+    </Routes>
+
   );
-}
+};
 
 export default App;
